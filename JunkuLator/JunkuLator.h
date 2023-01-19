@@ -12,5 +12,6 @@ private:
 	MathCalculator mathCalculator{};
 	MetricConvertor metricConvertor{};
 	StringTokenizer stringTokenizer{};
+	GradeCalculator gradeCalculator{};
 
 };

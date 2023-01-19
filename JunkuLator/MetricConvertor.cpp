@@ -28,7 +28,7 @@ void MetricConvertor::valueInput()
 }
 void MetricConvertor::printMenu()
 {
-    std::cout << "--------------------MetricConvertor-----------------------" << std::endl;
+    std::cout << "--------------------Metric Converter-----------------------" << std::endl;
     std::cout << "a) km to miles and Miles to Kilometers" << std::endl;
     std::cout << "b) Celsius to Fahrenheit and Fahrenheit to Celsius" << std::endl;
     std::cout << "c) kg to pounds and pounds to kg" << std::endl;
@@ -102,14 +102,15 @@ void MetricConvertor::setMap()
 }
 bool MetricConvertor::isValidChoice(std::string choice)
 {
-    bool flag = false;
     if (choice == "a" || choice == "A" || choice == "b" || choice == "B" || choice == "c" ||
         choice == "C" || choice == "d" || choice == "D" || choice == "e" || choice == "E" ||
         choice == "f" || choice == "F")
     {
-        flag = true;
+        return true;
     }
-    return flag;
+    else {
+        return false;
+    }
 }
 void MetricConvertor::on()
 {
@@ -129,36 +130,36 @@ void MetricConvertor::on()
         case 1:
         {
             valueInput();
-                }
+        }
         break;
         case 2:
         {
-            std::cout << "The total number of letters in the line is: " << std::endl;
+            std::cout << " ";
         }
         break;
         case 3:
         {
-            std::cout << "The total number of words in the line is: " << std::endl;
+            std::cout << " ";
         }
         break;
         case 4:
         {
-            std::cout << "The line written backwards is: ";
+            std::cout << " ";
         }
         break;
         case 5:
         {
-            std::cout << "All the words that start with a capital letter are: ";
+            std::cout << " ";
         }
         break;
         case 6:
         {
-            std::cout << "Enter the word you are looking for: " << std::endl;
+            std::cout << " ";
         }
         break;
         default:
         {
-            std::cout << "ERROR! Choice not found!" << std::endl;
+            std::cout << "ERROR! The choice was not found!" << std::endl;
         }
         }
     }

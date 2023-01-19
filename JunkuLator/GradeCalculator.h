@@ -33,6 +33,9 @@ public:
 
 
 	//utility
+	void printMenu();
+	void getInput();
+	bool isValidChoice(int choice);
 	void calculateGrade();
 	void on();
 	

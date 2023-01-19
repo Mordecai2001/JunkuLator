@@ -160,14 +160,15 @@ void StringTokenizer::printMenu()
 }
 bool StringTokenizer::isValidChoice(std::string choice)
 {
-    bool flag = false;
     if (choice == "a" || choice == "A" || choice == "b" || choice == "B" || choice == "c" ||
         choice == "C" || choice == "d" || choice == "D" || choice == "e" || choice == "E" ||
         choice == "f" || choice == "F")
     {
-        flag = true;
+        return true;
     }
-    return flag;
+    else {
+        return false;
+    }
 }
 void StringTokenizer::continueAnalysis()
 {

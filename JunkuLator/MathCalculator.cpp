@@ -59,6 +59,7 @@ void MathCalculator::setSecondOperand(int mySecondOperand)
 }
 void MathCalculator::inputOperation()
 {
+    std::cout << "-------------------Math Calculator---------------------" << std::endl;
     std::cout << "Please enter the operation(+,-,*,/,%,Log2(n),Help): ";
     std::cin >> operation;
 }
