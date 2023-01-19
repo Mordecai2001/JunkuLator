@@ -78,5 +78,6 @@ void GradeCalculator::calculateGrade() {
 	}
 }
 void GradeCalculator::on() {
-	
+	std::cout << "Enter your name: ";
+	std::cin >> studentName;
 }
