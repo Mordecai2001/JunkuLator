@@ -21,7 +21,7 @@ GradeCalculator::GradeCalculator(std::string name, int labs, int quizes, int pro
 
 }
 GradeCalculator::~GradeCalculator() {
-	std::cout << "GradeCalculator Destructor Call\n";
+	std::cout << "Grade Calculator Destructor Call\n";
 }
 char GradeCalculator::getGrade() const {
 	return grade;

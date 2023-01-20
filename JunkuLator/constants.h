@@ -1,10 +1,10 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-int mileInKM{1.60934};
-int poundInKG{0.453592};
-int footInMeters{0.3048};
-int inchInCM{2.54};
-int mphInKPH{1.609344};
+double mileInKM{1.60934};
+double poundInKG{0.453592};
+double footInMeters{0.3048};
+double inchInCM{2.54};
+double mphInKPH{1.609344};
 
 #endif

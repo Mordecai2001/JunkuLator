@@ -16,7 +16,7 @@ StringTokenizer::StringTokenizer(std::string theString)
     setMap();
 }
 StringTokenizer::~StringTokenizer() {
-    std::cout << "StringTokenizer Destructor Call\n";
+    std::cout << "String Tokenizer Destructor Call\n";
 }
 std::string StringTokenizer::getString() const
 {

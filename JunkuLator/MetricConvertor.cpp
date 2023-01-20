@@ -2,27 +2,27 @@
 #include "MetricConvertor.h"
 #include "constants.h"
 
-MetricConvertor::MetricConvertor(int theValue)
+MetricConvertor::MetricConvertor(double theValue)
 {
     if (theValue >= 0) {
         value = theValue;
     }
 }
 MetricConvertor::~MetricConvertor() {
-    std::cout << "MetricConvertor Destructor Call\n";
+    std::cout << "Metric Converter Destructor Call\n";
 }
-int MetricConvertor::getValue() const
+double MetricConvertor::getValue() const
 {
     return value;
 }
-void MetricConvertor::setValue(int theValue)
+void MetricConvertor::setValue(double theValue)
 {
     value = theValue;
 }
 void MetricConvertor::valueInput()
 {
     std::cout << "Enter the value: ";
-    int theValue;
+    double theValue;
     std::cin >> theValue;
     setValue(theValue);
 }
@@ -37,51 +37,51 @@ void MetricConvertor::printMenu()
     std::cout << "f) mph to kph and kph to mph" << std::endl;
     std::cout << "----------------------------------------------------------" << std::endl;
 }
-int MetricConvertor::kmToMiles()
+double MetricConvertor::kmToMiles()
 {
     return value * mileInKM;
 }
-int MetricConvertor::milesToKM()
+double MetricConvertor::milesToKM()
 {
     return value / mileInKM;
 }
-int MetricConvertor::celsiusToFahrenheit()
+double MetricConvertor::celsiusToFahrenheit()
 {
     return (32 + 1.8 * value);
 }
-int MetricConvertor::fahrenheitToCelsius()
+double MetricConvertor::fahrenheitToCelsius()
 {
     return (value / 1.8 - 32);
 }
-int MetricConvertor::kgToPounds()
+double MetricConvertor::kgToPounds()
 {
     return value * poundInKG;
 }
-int MetricConvertor::poundsToKG()
+double MetricConvertor::poundsToKG()
 {
     return value / poundInKG;
 }
-int MetricConvertor::metersToFeet()
+double MetricConvertor::metersToFeet()
 {
     return value * footInMeters;
 }
-int MetricConvertor::feetToMeters()
+double MetricConvertor::feetToMeters()
 {
     return value / footInMeters;
 }
-int MetricConvertor::inchesToCM()
+double MetricConvertor::inchesToCM()
 {
     return value / inchInCM;
 }
-int MetricConvertor::cmToInches()
+double MetricConvertor::cmToInches()
 {
     return value * inchInCM;
 }
-int MetricConvertor::mphToKPH()
+double MetricConvertor::mphToKPH()
 {
     return value * mphInKPH;
 }
-int MetricConvertor::kphToMPH()
+double MetricConvertor::kphToMPH()
 {
     return value / mphInKPH;
 }

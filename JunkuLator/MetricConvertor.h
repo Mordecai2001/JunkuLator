@@ -1,40 +1,41 @@
 #pragma once
 #include <map>
 #include <string>
+#include "Machine.h"
 
-class MetricConvertor
+class MetricConvertor : public Machine
 {
 private:
-    int value{};
+    double value{};
     std::map<std::string, int> myMap{};
 
 public:
     // constructors and the destructor
     MetricConvertor() = default;
-    MetricConvertor(int theValue);
+    MetricConvertor(double theValue);
     ~MetricConvertor();
 
     // setters and getters
-    int getValue() const;
-    void setValue(int theValue);
+    double getValue() const;
+    void setValue(double theValue);
 
     // input
     void valueInput();
 
     // utility
     void printMenu();
-    int kmToMiles();
-    int milesToKM();
-    int celsiusToFahrenheit();
-    int fahrenheitToCelsius();
-    int kgToPounds();
-    int poundsToKG();
-    int metersToFeet();
-    int feetToMeters();
-    int inchesToCM();
-    int cmToInches();
-    int mphToKPH();
-    int kphToMPH();
+    double kmToMiles();
+    double milesToKM();
+    double celsiusToFahrenheit();
+    double fahrenheitToCelsius();
+    double kgToPounds();
+    double poundsToKG();
+    double metersToFeet();
+    double feetToMeters();
+    double inchesToCM();
+    double cmToInches();
+    double mphToKPH();
+    double kphToMPH();
     void setMap();
     bool isValidChoice(std::string choice);
     void on();

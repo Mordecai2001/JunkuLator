@@ -2,8 +2,9 @@
 #include <string>
 #include <vector>
 #include <map>
+#include "Machine.h"
 
-class StringTokenizer
+class StringTokenizer : public Machine
 {
 private:
     std::string myString{};

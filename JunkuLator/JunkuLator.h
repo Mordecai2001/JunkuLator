@@ -4,8 +4,9 @@
 #include "StringTokenizer.h"
 #include "MetricConvertor.h"
 #include "GradeCalculator.h"
+#include "Machine.h"
 
-class JunkuLator 
+class JunkuLator : public Machine
 {
 private:
 	//member variables

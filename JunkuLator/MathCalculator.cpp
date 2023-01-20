@@ -31,7 +31,7 @@ MathCalculator::MathCalculator(std::string &myOperation, int theFirstOperand, in
     setMap();
 }
 MathCalculator::~MathCalculator() {
-    std::cout << "MathCalculator Destructor Call\n";
+    std::cout << "Math Calculator Destructor Call\n";
 }
 std::string MathCalculator::getOperation() const
 {

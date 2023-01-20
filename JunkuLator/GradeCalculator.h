@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-class GradeCalculator
+#include "Machine.h"
+class GradeCalculator : public Machine
 {
 private:
 	//member variables

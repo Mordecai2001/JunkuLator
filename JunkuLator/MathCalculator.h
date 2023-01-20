@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 #include <map>
+#include "Machine.h"
 
-
-class MathCalculator
+class MathCalculator : public Machine
 {
 private:
     // member variables

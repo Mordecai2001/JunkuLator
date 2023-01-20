@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="GradeCalculator.cpp" />
     <ClCompile Include="JunkuLator.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MathCalculator.cpp" />
     <ClCompile Include="MetricConvertor.cpp" />
     <ClCompile Include="StringTokenizer.cpp" />
