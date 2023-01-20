@@ -56,10 +56,10 @@ void MetricConvertor::getInput() {
 void MetricConvertor::printMenu()
 {
     std::cout << "--------------------Metric Converter-----------------------" << std::endl;
-    std::cout << "a) km to miles and Miles to Kilometers" << std::endl;
+    std::cout << "a) km to miles and miles to kilometers" << std::endl;
     std::cout << "b) Celsius to Fahrenheit and Fahrenheit to Celsius" << std::endl;
     std::cout << "c) kg to pounds and pounds to kg" << std::endl;
-    std::cout << "d) Meters to Feet and Feet to Meters" << std::endl;
+    std::cout << "d) meters to feet and feet to meters" << std::endl;
     std::cout << "e) inches to cm and cm to inches" << std::endl;
     std::cout << "f) mph to kph and kph to mph" << std::endl;
     std::cout << "----------------------------------------------------------" << std::endl;
@@ -127,36 +127,175 @@ bool MetricConvertor::isValidChoice(std::string choice)
 void MetricConvertor::on()
 {
     printMenu();
+    getInput();
     switch (myMap[choice])
     {
         case 1:
         {
             valueInput();
+            std::cout << "----------------------------------------------------------" << std::endl;
+            std::cout << "a) convert km to miles " << std::endl;
+            std::cout << "b) convert miles to km " << std::endl;
+            std::cout << "----------------------------------------------------------" << std::endl;
+            getInput();
+            switch (myMap[choice])
+            {
+                case 1:
+                {
+                    std::cout << value << " in miles is: " << kmToMiles() << std::endl;
+                }
+                break;
+                case 2:
+                {
+                    std::cout << value << " in kilometers is: " << milesToKM() << std::endl;
+                }
+                break;
+                default:
+                {
+                    std::cout << "ERROR! The choice was not found!" << std::endl;
+                }
+            }
+
         }
         break;
         case 2:
         {
-            std::cout << " ";
+            valueInput();
+            std::cout << "----------------------------------------------------------" << std::endl;
+            std::cout << "a) convert Celsius to Fahrenheit " << std::endl;
+            std::cout << "b) convert Fahrenheit to Celsius " << std::endl;
+            std::cout << "----------------------------------------------------------" << std::endl;
+            getInput();
+            switch (myMap[choice])
+            {
+                case 1:
+                {
+                    std::cout << value << " in Fahrenheit is: " << celsiusToFahrenheit() << std::endl;
+                }
+                break;
+                case 2:
+                {
+                    std::cout << value << " in Celsius is: " << fahrenheitToCelsius() << std::endl;
+                }
+                break;
+                default:
+                {
+                    std::cout << "ERROR! The choice was not found!" << std::endl;
+                }
+            }
+
         }
         break;
         case 3:
         {
-            std::cout << " ";
+            valueInput();
+            std::cout << "----------------------------------------------------------" << std::endl;
+            std::cout << "a) convert kg to pounds " << std::endl;
+            std::cout << "b) convert pounds to kg " << std::endl;
+            std::cout << "----------------------------------------------------------" << std::endl;
+            getInput();
+            switch (myMap[choice])
+            {
+                case 1:
+                {
+                    std::cout << value << " in pounds is: " << kgToPounds() << std::endl;
+                }
+                break;
+                case 2:
+                {
+                    std::cout << value << " in kilograms is: " << poundsToKG() << std::endl;
+                }
+                break;
+                default:
+                {
+                    std::cout << "ERROR! The choice was not found!" << std::endl;
+                }
+            }
+
         }
         break;
         case 4:
         {
-            std::cout << " ";
+            valueInput();
+            std::cout << "----------------------------------------------------------" << std::endl;
+            std::cout << "a) convert meters to feet " << std::endl;
+            std::cout << "b) convert feet to meters " << std::endl;
+            std::cout << "----------------------------------------------------------" << std::endl;
+            getInput();
+            switch (myMap[choice])
+            {
+                case 1:
+                {
+                    std::cout << value << " in feet is: " << metersToFeet() << std::endl;
+                }
+                break;
+                case 2:
+                {
+                    std::cout << value << " in meters is: " << feetToMeters() << std::endl;
+                }
+                break;
+                default:
+                {
+                    std::cout << "ERROR! The choice was not found!" << std::endl;
+                }
+            }
+
         }
         break;
         case 5:
         {
-            std::cout << " ";
+            valueInput();
+            std::cout << "----------------------------------------------------------" << std::endl;
+            std::cout << "a) convert inches to cm " << std::endl;
+            std::cout << "b) convert cm to inches " << std::endl;
+            std::cout << "----------------------------------------------------------" << std::endl;
+            getInput();
+            switch (myMap[choice])
+            {
+                case 1:
+                {
+                    std::cout << value << " in cm is: " << inchesToCM() << std::endl;
+                }
+                break;
+                case 2:
+                {
+                    std::cout << value << " in inches is: " << cmToInches() << std::endl;
+                }
+                break;
+                default:
+                {
+                    std::cout << "ERROR! The choice was not found!" << std::endl;
+                }
+            }
+
         }
         break;
         case 6:
         {
-            std::cout << " ";
+            valueInput();
+            std::cout << "----------------------------------------------------------" << std::endl;
+            std::cout << "a) convert mph to kph " << std::endl;
+            std::cout << "b) convert kph to mph " << std::endl;
+            std::cout << "----------------------------------------------------------" << std::endl;
+            getInput();
+            switch (myMap[choice])
+            {
+            case 1:
+            {
+                std::cout << value << " in kph is: " << mphToKPH() << std::endl;
+            }
+            break;
+            case 2:
+            {
+                std::cout << value << " in mph is: " << kphToMPH() << std::endl;
+            }
+            break;
+            default:
+            {
+                std::cout << "ERROR! The choice was not found!" << std::endl;
+            }
+            }
+
         }
         break;
         default:

@@ -113,6 +113,7 @@ void GradeCalculator::calculateGrade() {
 }
 void GradeCalculator::on() {
 	printMenu();
+	inputChoice();
 	if (choice == 1) {
 		getInput();
 		calculateGrade();
