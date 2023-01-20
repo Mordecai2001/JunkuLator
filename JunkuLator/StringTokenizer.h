@@ -8,6 +8,7 @@ class StringTokenizer : public Machine
 {
 private:
     std::string myString{};
+    std::string choice{};
     std::vector<std::string> words{};
     std::map<std::string, int> myMap{}; // used to store the choices
 
@@ -21,6 +22,9 @@ public:
     std::string getString() const;
     void setString(std::string &theString);
     void setMap();
+
+    //input
+    void getInput();
 
     // utility functions
     void tokenize();

@@ -138,6 +138,7 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="GradeCalculator.h" />
     <ClInclude Include="JunkuLator.h" />
+    <ClInclude Include="Machine.h" />
     <ClInclude Include="MathCalculator.h" />
     <ClInclude Include="MetricConvertor.h" />
     <ClInclude Include="StringTokenizer.h" />

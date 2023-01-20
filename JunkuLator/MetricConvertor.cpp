@@ -19,12 +19,39 @@ void MetricConvertor::setValue(double theValue)
 {
     value = theValue;
 }
+void MetricConvertor::setMap() {
+    myMap["a"] = 1;
+    myMap["A"] = 1;
+    myMap["b"] = 2;
+    myMap["B"] = 2;
+    myMap["c"] = 3;
+    myMap["C"] = 3;
+    myMap["d"] = 4;
+    myMap["D"] = 4;
+    myMap["e"] = 5;
+    myMap["E"] = 5;
+    myMap["f"] = 6;
+    myMap["F"] = 6;
+}
 void MetricConvertor::valueInput()
 {
     std::cout << "Enter the value: ";
     double theValue;
     std::cin >> theValue;
     setValue(theValue);
+}
+void MetricConvertor::getInput() {
+    std::cout << "Enter your choice: " << std::endl;
+    std::cin >> choice;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    while (!isValidChoice(choice))
+    {
+        std::cout << "ERROR! Your choice is invalid!" << std::endl;
+        std::cout << "------------------------------" << std::endl;
+        getInput();
+
+    }
+
 }
 void MetricConvertor::printMenu()
 {
@@ -85,21 +112,6 @@ double MetricConvertor::kphToMPH()
 {
     return value / mphInKPH;
 }
-void MetricConvertor::setMap()
-{
-    myMap["a"] = 1;
-    myMap["A"] = 1;
-    myMap["b"] = 2;
-    myMap["B"] = 2;
-    myMap["c"] = 3;
-    myMap["C"] = 3;
-    myMap["d"] = 4;
-    myMap["D"] = 4;
-    myMap["e"] = 5;
-    myMap["E"] = 5;
-    myMap["f"] = 6;
-    myMap["F"] = 6;
-}
 bool MetricConvertor::isValidChoice(std::string choice)
 {
     if (choice == "a" || choice == "A" || choice == "b" || choice == "B" || choice == "c" ||
@@ -115,18 +127,8 @@ bool MetricConvertor::isValidChoice(std::string choice)
 void MetricConvertor::on()
 {
     printMenu();
-    std::cout << "Enter your choice: " << std::endl;
-    std::string choice;
-    std::cin >> choice;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (!isValidChoice(choice))
+    switch (myMap[choice])
     {
-        std::cout << "ERROR! Your choice is invalid!" << std::endl;
-    }
-    else
-    {
-        switch (myMap[choice])
-        {
         case 1:
         {
             valueInput();
@@ -161,6 +163,6 @@ void MetricConvertor::on()
         {
             std::cout << "ERROR! The choice was not found!" << std::endl;
         }
-        }
     }
+    
 }

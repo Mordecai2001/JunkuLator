@@ -11,7 +11,7 @@ private:
     int firstOperand{};
     int secondOperand{};
     int n{};                            // used for the log2(n)
-    std::map<std::string, int> myMap{}; // keeps the operation types
+    std::map<std::string, int> myMap{}; // used to store the choices as int
 
 public:
     // constructors and the destructor
@@ -33,6 +33,7 @@ public:
     void inputFirstOperand();
     void inputSecondOperand();
     void inputN();
+    void getInput();
 
     // utility
     void calculate();

@@ -7,7 +7,8 @@ class MetricConvertor : public Machine
 {
 private:
     double value{};
-    std::map<std::string, int> myMap{};
+    std::string choice{};
+    std::map<std::string, int> myMap{};//holds the choices as int
 
 public:
     // constructors and the destructor
@@ -18,9 +19,11 @@ public:
     // setters and getters
     double getValue() const;
     void setValue(double theValue);
+    void setMap();
 
     // input
     void valueInput();
+    void getInput();
 
     // utility
     void printMenu();
@@ -36,7 +39,6 @@ public:
     double cmToInches();
     double mphToKPH();
     double kphToMPH();
-    void setMap();
     bool isValidChoice(std::string choice);
     void on();
 };

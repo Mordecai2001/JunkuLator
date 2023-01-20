@@ -147,6 +147,17 @@ void StringTokenizer::setMap()
     myMap["f"] = 6;
     myMap["F"] = 6;
 }
+void StringTokenizer::getInput() {
+    std::cout << "Enter your choice: " << std::endl;
+    std::cin >> choice;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    while (!isValidChoice(choice))
+    {
+        std::cout << "ERROR! Your choice is invalid!" << std::endl;
+        std::cout << "------------------------------" << std::endl;
+        getInput();
+    }
+}
 void StringTokenizer::printMenu()
 {
     std::cout << "-------------------String Tokenizer---------------------" << std::endl;
@@ -188,18 +199,9 @@ void StringTokenizer::continueAnalysis()
 void StringTokenizer::on()
 {
     printMenu();
-    std::cout << "Enter your choice: " << std::endl;
-    std::string choice;
-    std::cin >> choice;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (!isValidChoice(choice))
+    getInput();
+    switch (myMap[choice])
     {
-        std::cout << "ERROR! Your choice is invalid!" << std::endl;
-    }
-    else
-    {
-        switch (myMap[choice])
-        {
         case 1:
         {
             std::cout << "Enter the text: ";
@@ -251,6 +253,6 @@ void StringTokenizer::on()
         {
             std::cout << "ERROR! Choice not found!" << std::endl;
         }
-        }
     }
+    
 }

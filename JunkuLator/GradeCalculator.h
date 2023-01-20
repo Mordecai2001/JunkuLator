@@ -12,6 +12,7 @@ private:
 	int projectGrade{};
 	int midtermGrade{};
 	int finalGrade{};
+	int choice{};
 public:
 	//constructors and the destructor
 	GradeCalculator() = default;
@@ -32,10 +33,13 @@ public:
 	void setMidtermGrade(int myMidterm);
 	void setFinalGrade(int myFinal);
 
+	//input 
+	void inputChoice();
+	void getInput();
+
 
 	//utility
 	void printMenu();
-	void getInput();
 	bool isValidChoice(int choice);
 	void calculateGrade();
 	void on();

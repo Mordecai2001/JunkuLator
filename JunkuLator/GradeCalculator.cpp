@@ -59,6 +59,15 @@ void GradeCalculator::setMidtermGrade(int myMidterm) {
 void GradeCalculator::setFinalGrade(int myFinal) {
 	finalGrade = myFinal;
 }
+void GradeCalculator::inputChoice() {
+	std::cout << "Enter your choice: ";
+	std::cin >> choice;
+	while (!isValidChoice(choice))
+	{
+		std::cout << "ERROR! Your choice is invalid!" << std::endl;
+		inputChoice();
+	}
+}
 void GradeCalculator::printMenu() {
 	std::cout << "-------------------Grade Calculator---------------------" << std::endl;
 	std::cout << "Do you want to enter the grades or to read from a file?" << std::endl;
@@ -104,23 +113,13 @@ void GradeCalculator::calculateGrade() {
 }
 void GradeCalculator::on() {
 	printMenu();
-	int choice;
-	std::cout << "Enter your choice: ";
-	std::cin >> choice;
-	if (!isValidChoice(choice))
-	{
-		std::cout << "ERROR! Your choice is invalid!" << std::endl;
+	if (choice == 1) {
+		getInput();
+		calculateGrade();
+		std::cout << studentName << "'s grade is: " << grade << std::endl;
 	}
 	else {
-		if (choice == 1) {
-			getInput();
-			calculateGrade();
-			std::cout << studentName << "'s grade is: " << grade << std::endl;
-		}
-		else {
 			//implement reading from a file
-		}
 	}
-
-	
 }
+

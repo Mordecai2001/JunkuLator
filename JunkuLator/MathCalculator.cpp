@@ -78,6 +78,15 @@ void MathCalculator ::inputN()
     std::cout << "Enter n: ";
     std::cin >> n;
 }
+void MathCalculator::getInput() {
+    inputOperation();
+    while (!isValidOperation())
+    {
+        std::cout << "ERROR! Can't match any operation!" << std::endl;
+        std::cout << "------------------------------" << std::endl;
+        inputOperation();
+    }
+}
 void MathCalculator::calculate()
 {
     switch (myMap[operation])
@@ -149,11 +158,6 @@ bool MathCalculator::isValidOperation()
 }
 void MathCalculator::on()
 {
-    inputOperation();
-    if (isValidOperation())
-    {
-        calculate();
-    }
-    else
-        std::cout << "ERROR! Can't match any operation!" << std::endl;
+    getInput();
+    calculate();
 }
