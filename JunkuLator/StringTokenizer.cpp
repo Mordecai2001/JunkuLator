@@ -158,6 +158,12 @@ void StringTokenizer::getInput() {
         getInput();
     }
 }
+void StringTokenizer::inputString() {
+    std::cout << "Enter the text: ";
+    getline(std::cin, myString);
+    tokenize();
+    std::cout << "The text has been analyzed!" << std::endl;
+}
 void StringTokenizer::printMenu()
 {
     std::cout << "-------------------String Tokenizer---------------------" << std::endl;
@@ -204,27 +210,27 @@ void StringTokenizer::on()
     {
         case 1:
         {
-            std::cout << "Enter the text: ";
-            getline(std::cin, myString);
-            tokenize();
-            std::cout << "The text has been analyzed!" << std::endl;
+            inputString();
             continueAnalysis();
         }
         break;
         case 2:
         {
+            if (myString == "") inputString();
             std::cout << "The total number of letters in the line is: " << numberOfLetters() << std::endl;
             continueAnalysis();
         }
         break;
         case 3:
         {
+            if (myString == "") inputString();
             std::cout << "The total number of words in the line is: " << numberOfWords() << std::endl;
             continueAnalysis();
         }
         break;
         case 4:
         {
+            if (myString == "") inputString();
             std::cout << "The line written backwards is: ";
             printReverseLine();
             continueAnalysis();
@@ -232,6 +238,7 @@ void StringTokenizer::on()
         break;
         case 5:
         {
+            if (myString == "") inputString();
             std::cout << "All the words that start with a capital letter are: ";
             printCapitalWords();
             continueAnalysis();
@@ -239,6 +246,7 @@ void StringTokenizer::on()
         break;
         case 6:
         {
+            if (myString == "") inputString();
             std::cout << "Enter the word you are looking for: " << std::endl;
             std::string newWord;
             std::cin >> newWord;
@@ -255,4 +263,13 @@ void StringTokenizer::on()
         }
     }
     
+}
+void StringTokenizer::help() {
+    std::cout << "-------------------------HELP---------------------------" << std::endl;
+    std::cout << "The String Tokenizer allows you to analyze a string and" << std::endl;
+    std::cout << "see how many words and letters are in the string, you can also" << std::endl;
+    std::cout << "print the string in reverse, and a lot more. To use it you just" << std::endl;
+    std::cout << "have to enter the string and then choose the what you want to do" << std::endl;
+    std::cout << "with it." << std::endl;
+    std::cout << "--------------------------------------------------------" << std::endl;
 }

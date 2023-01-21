@@ -35,10 +35,15 @@ void MetricConvertor::setMap() {
 }
 void MetricConvertor::valueInput()
 {
-    std::cout << "Enter the value: ";
-    double theValue;
-    std::cin >> theValue;
-    setValue(theValue);
+    try
+    {
+        std::cout << "Enter the value: ";
+        std::cin >> myValue;
+    }
+    catch (std::ios_base::failure& e) {
+        std::cerr << "Invalid input. Please enter a floating point number." << std::endl;
+        valueInput();
+    }
 }
 void MetricConvertor::getInput() {
     std::cout << "Enter your choice: " << std::endl;
@@ -304,4 +309,11 @@ void MetricConvertor::on()
         }
     }
     
+}
+void MetricConvertor::help() {
+    std::cout << "-------------------------HELP---------------------------" << std::endl;
+    std::cout << "The Metric Converter allows you to convert values from the" << std::endl;
+    std::cout << "Imperial to the metric system. You just have to choose what" << std::endl;
+    std::cout << "unit you want and then you will be prompted to enter the value." << std::endl;
+    std::cout << "--------------------------------------------------------" << std::endl;
 }

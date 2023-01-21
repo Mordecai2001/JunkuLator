@@ -38,6 +38,9 @@ public:
     // utility
     void calculate();
     bool isValidOperation();
-    void on(); // turn on the calculator
+
+    //inherited from Machine
+    void on();
+    void help();
 };
 

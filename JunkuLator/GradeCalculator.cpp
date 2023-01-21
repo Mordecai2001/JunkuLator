@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "GradeCalculator.h"
 
 GradeCalculator::GradeCalculator(std::string name, int labs, int quizes, int project, int midterm, int finals) 
@@ -76,18 +78,60 @@ void GradeCalculator::printMenu() {
 	std::cout << "--------------------------------------------------------" << std::endl;
 }
 void GradeCalculator::getInput() {
-	std::cout << "Enter your name: ";
-	std::cin >> studentName;
-	std::cout << "Enter your labs' grade: ";
-	std::cin >> labsGrade;
-	std::cout << "Enter your quizes' grade: ";
-	std::cin >> quizesGrade;
-	std::cout << "Enter your project grade: ";
-	std::cin >> projectGrade;
-	std::cout << "Enter your midterm grade: ";
-	std::cin >> midtermGrade;
-	std::cout << "Enter your final grade: ";
-	std::cin >> finalGrade;
+	try {
+		std::cout << "Enter your name: ";
+		std::cin >> studentName;
+	}
+	catch (std::ios_base::failure& e) {
+		std::cerr << "Invalid input. Please enter a string." << std::endl;
+		std::cout << "Enter your name: ";
+		std::cin >> studentName;
+	}
+	try {
+		std::cout << "Enter your labs' grade: ";
+		std::cin >> labsGrade;
+	}
+	catch (std::ios_base::failure& e) {
+		std::cerr << "Invalid input. Please enter an integer." << std::endl;
+		std::cout << "Enter your labs' grade: ";
+		std::cin >> labsGrade;
+	}
+	try {
+		std::cout << "Enter your quizes' grade: ";
+		std::cin >> quizesGrade;
+	}
+	catch (std::ios_base::failure& e) {
+		std::cerr << "Invalid input. Please enter an integer." << std::endl;
+		std::cout << "Enter your quizes' grade: ";
+		std::cin >> quizesGrade;
+	}
+	try {
+		std::cout << "Enter your project grade: ";
+		std::cin >> projectGrade;
+	}
+	catch (std::ios_base::failure& e) {
+		std::cerr << "Invalid input. Please enter an integer." << std::endl;
+		std::cout << "Enter your project grade: ";
+		std::cin >> projectGrade;
+	}
+	try {
+		std::cout << "Enter your midterm grade: ";
+		std::cin >> midtermGrade;
+	}
+	catch (std::ios_base::failure& e) {
+		std::cerr << "Invalid input. Please enter an integer." << std::endl;
+		std::cout << "Enter your midterm grade: ";
+		std::cin >> midtermGrade;
+	}
+	try {
+		std::cout << "Enter your final grade: ";
+		std::cin >> finalGrade;
+	}
+	catch (std::ios_base::failure& e) {
+		std::cerr << "Invalid input. Please enter an integer." << std::endl;
+		std::cout << "Enter your final grade: ";
+		std::cin >> finalGrade;
+	}
 }
 bool GradeCalculator::isValidChoice(int choice) {
 	if (choice == 1 || choice == 2) return true;
@@ -111,6 +155,10 @@ void GradeCalculator::calculateGrade() {
 		grade = 'F';
 	} 
 }
+bool GradeCalculator::isFileExist(std::string fileName) {
+	std::ifstream file(fileName);
+	return file.good();
+}
 void GradeCalculator::on() {
 	printMenu();
 	inputChoice();
@@ -120,7 +168,29 @@ void GradeCalculator::on() {
 		std::cout << studentName << "'s grade is: " << grade << std::endl;
 	}
 	else {
-			//implement reading from a file
+		//implement reading from a file
+		std::string fileName{};
+		std::cout << "Enter the name of the file: ";
+		std::cin >> fileName;
+		while (!isFileExist(fileName)) {
+			std::cout << "ERROR! No file named "<<fileName;
+			std::cout << "-----------------------------------";
+			std::cout << "Enter the name of the file: ";
+			std::cin >> fileName;
+		}
+		std::ifstream file(fileName);
+		while (file >> studentName >> labsGrade >> quizesGrade >> projectGrade >> midtermGrade >> finalGrade) {
+			calculateGrade();
+			std::cout << studentName << "'s grade is: " << grade << std::endl;
+		}
+		file.close();
 	}
+}
+void GradeCalculator::help() {
+	std::cout << "-------------------------HELP---------------------------" << std::endl;
+	std::cout << "The Grade Calculator allows you to calculate the grades of" << std::endl;
+	std::cout << "a student by either typing the grades yourself or by reading" << std::endl;
+	std::cout << "from a file. " << std::endl;
+	std::cout << "--------------------------------------------------------" << std::endl;
 }
 

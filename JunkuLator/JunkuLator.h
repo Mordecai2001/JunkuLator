@@ -14,5 +14,11 @@ private:
 	MetricConvertor metricConvertor{};
 	StringTokenizer stringTokenizer{};
 	GradeCalculator gradeCalculator{};
+public:
+	//utility functions
+	void printMenu();
 
+	//inherited from Machine
+	void on();
+	void help();
 };

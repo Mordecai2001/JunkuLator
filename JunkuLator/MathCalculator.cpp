@@ -59,24 +59,45 @@ void MathCalculator::setSecondOperand(int mySecondOperand)
 }
 void MathCalculator::inputOperation()
 {
-    std::cout << "-------------------Math Calculator---------------------" << std::endl;
+    std::cout << "--------------------Math Calculator----------------------" << std::endl;
     std::cout << "Please enter the operation(+,-,*,/,%,Log2(n),Help): ";
     std::cin >> operation;
 }
 void MathCalculator::inputFirstOperand()
 {
-    std::cout << "Enter the first operand: ";
-    std::cin >> firstOperand;
+    try
+    {
+        std::cout << "Enter the first operand: ";
+        std::cin >> firstOperand;
+    }
+    catch (std::ios_base::failure& e) {
+        std::cerr << "Invalid input. Please enter an integer." << std::endl;
+        inputFirstOperand();
+    }
 }
 void MathCalculator::inputSecondOperand()
 {
-    std::cout << "Enter the second operand: ";
-    std::cin >> secondOperand;
+    try
+    {
+        std::cout << "Enter the second operand: ";
+        std::cin >> secondOperand;
+    }
+    catch (std::ios_base::failure& e) {
+        std::cerr << "Invalid input. Please enter an integer." << std::endl;
+        inputSecondOperand();
+    }
 }
 void MathCalculator ::inputN()
 {
-    std::cout << "Enter n: ";
-    std::cin >> n;
+    try 
+    {
+        std::cout << "Enter n: ";
+        std::cin >> n;
+    }
+    catch (std::ios_base::failure& e) {
+        std::cerr << "Invalid input. Please enter an integer." << std::endl;
+        inputN();
+    }
 }
 void MathCalculator::getInput() {
     inputOperation();
@@ -160,4 +181,12 @@ void MathCalculator::on()
 {
     getInput();
     calculate();
+}
+void MathCalculator::help() {
+    std::cout << "-------------------------HELP---------------------------" << std::endl;
+    std::cout << "The Math Calculator allows you to calculate using arithmetic" << std::endl;
+    std::cout << "and logical operations. The allowed operations are: +,-,*,/,%" << std::endl;
+    std::cout << "and log2(n). This calculator was designed to work only with  " << std::endl;
+    std::cout << "integers, so other types will not be accepted" << std::endl;
+    std::cout << "--------------------------------------------------------" << std::endl;
 }

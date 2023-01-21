@@ -6,7 +6,7 @@
 class MetricConvertor : public Machine
 {
 private:
-    double value{};
+    double myValue{};
     std::string choice{};
     std::map<std::string, int> myMap{};//holds the choices as int
 
@@ -40,6 +40,9 @@ public:
     double mphToKPH();
     double kphToMPH();
     bool isValidChoice(std::string choice);
+
+    //inherited from Machine
     void on();
+    void help();
 };
 

@@ -42,7 +42,11 @@ public:
 	void printMenu();
 	bool isValidChoice(int choice);
 	void calculateGrade();
+	bool isFileExist(std::string fileName);
+	
+	//inherited from Machine
 	void on();
+	void help();
 	
 
 };

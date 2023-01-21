@@ -7,7 +7,7 @@
 class StringTokenizer : public Machine
 {
 private:
-    std::string myString{};
+    std::string myString{""};
     std::string choice{};
     std::vector<std::string> words{};
     std::map<std::string, int> myMap{}; // used to store the choices
@@ -25,6 +25,8 @@ public:
 
     //input
     void getInput();
+    void inputString();
+    
 
     // utility functions
     void tokenize();
@@ -38,6 +40,9 @@ public:
     void printMenu();
     bool isValidChoice(std::string choice);
     void continueAnalysis();
+    
+    //inherited from Machine
     void on();
+    void help();
 };
 
