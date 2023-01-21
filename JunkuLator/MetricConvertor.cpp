@@ -35,14 +35,18 @@ void MetricConvertor::setMap() {
 }
 void MetricConvertor::valueInput()
 {
-    try
+    
+    std::cout << "Enter the value: ";
+    std::cin >> value;
+    //ERROR HANDLING
+    while (std::cin.fail())
     {
-        std::cout << "Enter the value: ";
-        std::cin >> value;
-    }
-    catch (std::ios_base::failure& e) {
-        std::cerr << "Invalid input. Please enter a floating point number." << std::endl;
-        valueInput();
+        std::cout << "Please enter an integer!" << std::endl;
+        // clear error state
+        std::cin.clear();
+        // discard 'bad' character(s)
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     }
 }
 void MetricConvertor::getInput() {

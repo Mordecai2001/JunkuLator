@@ -65,39 +65,52 @@ void MathCalculator::inputOperation()
 }
 void MathCalculator::inputFirstOperand()
 {
-    try
+    std::cout << "Enter the first operand: ";
+    std::cin >> firstOperand;
+    //ERROR HANDLING
+    while (std::cin.fail())
     {
+        std::cout << "Please enter an integer!" <<std::endl;
+        // clear error state
+        std::cin.clear();
+        // discard 'bad' character(s)
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Enter the first operand: ";
         std::cin >> firstOperand;
-    }
-    catch (std::ios_base::failure& e) {
-        std::cerr << "Invalid input. Please enter an integer." << std::endl;
-        inputFirstOperand();
     }
 }
 void MathCalculator::inputSecondOperand()
 {
-    try
+    
+    std::cout << "Enter the second operand: ";
+    std::cin >> secondOperand;
+    //ERROR HANDLING
+    while (std::cin.fail())
     {
+        std::cout << "Please enter an integer!" << std::endl;
+        // clear error state
+        std::cin.clear();
+        // discard 'bad' character(s)
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Enter the second operand: ";
         std::cin >> secondOperand;
-    }
-    catch (std::ios_base::failure& e) {
-        std::cerr << "Invalid input. Please enter an integer." << std::endl;
-        inputSecondOperand();
     }
 }
 void MathCalculator ::inputN()
 {
-    try 
+    std::cout << "Enter n: ";
+    std::cin >> n;
+    //ERROR HANDLING
+    while (std::cin.fail())
     {
+        std::cout << "Please enter an integer!" << std::endl;
+        // clear error state
+        std::cin.clear();
+        // discard 'bad' character(s)
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Enter n: ";
         std::cin >> n;
-    }
-    catch (std::ios_base::failure& e) {
-        std::cerr << "Invalid input. Please enter an integer." << std::endl;
-        inputN();
-    }
+    }   
 }
 void MathCalculator::getInput() {
     inputOperation();
@@ -157,6 +170,8 @@ void MathCalculator::calculate()
     case 7: // help
     {
         // to implement help
+        help();
+        on();
     }
     break;
     default:

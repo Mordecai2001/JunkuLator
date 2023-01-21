@@ -78,57 +78,86 @@ void GradeCalculator::printMenu() {
 	std::cout << "--------------------------------------------------------" << std::endl;
 }
 void GradeCalculator::getInput() {
-	try {
+	std::cout << "Enter your name: ";
+	std::cin >> studentName;
+	//ERROR HANDLING
+	while (std::cin.fail())
+	{
+		std::cout << "Please enter a string!" << std::endl;
+		// clear error state
+		std::cin.clear();
+		// discard 'bad' character(s)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter your name: ";
 		std::cin >> studentName;
 	}
-	catch (std::ios_base::failure& e) {
-		std::cerr << "Invalid input. Please enter a string." << std::endl;
-		std::cout << "Enter your name: ";
-		std::cin >> studentName;
-	}
-	try {
+	
+	std::cout << "Enter your labs' grade: ";
+	std::cin >> labsGrade;
+	//ERROR HANDLING
+	while (std::cin.fail())
+	{
+		std::cout << "Please enter an integer!" << std::endl;
+		// clear error state
+		std::cin.clear();
+		// discard 'bad' character(s)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter your labs' grade: ";
 		std::cin >> labsGrade;
 	}
-	catch (std::ios_base::failure& e) {
-		std::cerr << "Invalid input. Please enter an integer." << std::endl;
-		std::cout << "Enter your labs' grade: ";
-		std::cin >> labsGrade;
-	}
-	try {
+	
+	std::cout << "Enter your quizes' grade: ";
+	std::cin >> quizesGrade;
+	//ERROR HANDLING
+	while (std::cin.fail())
+	{
+		std::cout << "Please enter an integer!" << std::endl;
+		// clear error state
+		std::cin.clear();
+		// discard 'bad' character(s)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter your quizes' grade: ";
 		std::cin >> quizesGrade;
 	}
-	catch (std::ios_base::failure& e) {
-		std::cerr << "Invalid input. Please enter an integer." << std::endl;
-		std::cout << "Enter your quizes' grade: ";
-		std::cin >> quizesGrade;
-	}
-	try {
+	
+	std::cout << "Enter your project grade: ";
+	std::cin >> projectGrade;
+	//ERROR HANDLING
+	while (std::cin.fail())
+	{
+		std::cout << "Please enter an integer!" << std::endl;
+		// clear error state
+		std::cin.clear();
+		// discard 'bad' character(s)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter your project grade: ";
 		std::cin >> projectGrade;
 	}
-	catch (std::ios_base::failure& e) {
-		std::cerr << "Invalid input. Please enter an integer." << std::endl;
-		std::cout << "Enter your project grade: ";
-		std::cin >> projectGrade;
-	}
-	try {
+	
+	std::cout << "Enter your midterm grade: ";
+	std::cin >> midtermGrade;
+	//ERROR HANDLING
+	while (std::cin.fail())
+	{
+		std::cout << "Please enter an integer!" << std::endl;
+		// clear error state
+		std::cin.clear();
+		// discard 'bad' character(s)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter your midterm grade: ";
 		std::cin >> midtermGrade;
 	}
-	catch (std::ios_base::failure& e) {
-		std::cerr << "Invalid input. Please enter an integer." << std::endl;
-		std::cout << "Enter your midterm grade: ";
-		std::cin >> midtermGrade;
-	}
-	try {
-		std::cout << "Enter your final grade: ";
-		std::cin >> finalGrade;
-	}
-	catch (std::ios_base::failure& e) {
-		std::cerr << "Invalid input. Please enter an integer." << std::endl;
+	
+	std::cout << "Enter your final grade: ";
+	std::cin >> finalGrade;
+	//ERROR HANDLING
+	while (std::cin.fail())
+	{
+		std::cout << "Please enter an integer!" << std::endl;
+		// clear error state
+		std::cin.clear();
+		// discard 'bad' character(s)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter your final grade: ";
 		std::cin >> finalGrade;
 	}
