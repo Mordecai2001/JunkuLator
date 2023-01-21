@@ -75,6 +75,7 @@ void GradeCalculator::printMenu() {
 	std::cout << "Do you want to enter the grades or to read from a file?" << std::endl;
 	std::cout << "1. Enter the grades manually" << std::endl;
 	std::cout << "2. Read from a file" << std::endl;
+	std::cout << "3. Get help" << std::endl;
 	std::cout << "--------------------------------------------------------" << std::endl;
 }
 void GradeCalculator::getInput() {
@@ -163,7 +164,7 @@ void GradeCalculator::getInput() {
 	}
 }
 bool GradeCalculator::isValidChoice(int choice) {
-	if (choice == 1 || choice == 2) return true;
+	if (choice == 1 || choice == 2 || choice == 3) return true;
 	else return false;
 }
 void GradeCalculator::calculateGrade() {
@@ -196,7 +197,7 @@ void GradeCalculator::on() {
 		calculateGrade();
 		std::cout << studentName << "'s grade is: " << grade << std::endl;
 	}
-	else {
+	else if(choice == 2) {
 		//implement reading from a file
 		std::string fileName{};
 		std::cout << "Enter the name of the file: ";
@@ -213,6 +214,10 @@ void GradeCalculator::on() {
 			std::cout << studentName << "'s grade is: " << grade << std::endl;
 		}
 		file.close();
+	}
+	else {
+		help();
+		on();
 	}
 }
 void GradeCalculator::help() {

@@ -146,6 +146,11 @@ void StringTokenizer::setMap()
     myMap["E"] = 5;
     myMap["f"] = 6;
     myMap["F"] = 6;
+    myMap["h"] = 7;
+    myMap["H"] = 7;
+    myMap["help"] = 7;
+    myMap["Help"] = 7;
+    myMap["HELP"] = 7;
 }
 void StringTokenizer::getInput() {
     std::cout << "Enter your choice: " << std::endl;
@@ -173,13 +178,15 @@ void StringTokenizer::printMenu()
     std::cout << "d. Print the line backwards." << std::endl;
     std::cout << "e. Print all words that starts with capital letter." << std::endl;
     std::cout << "f. Search for a word in the line." << std::endl;
+    std::cout << "h.HELP" << std::endl;
     std::cout << "---------------------------------------------------------" << std::endl;
 }
 bool StringTokenizer::isValidChoice(std::string choice)
 {
     if (choice == "a" || choice == "A" || choice == "b" || choice == "B" || choice == "c" ||
         choice == "C" || choice == "d" || choice == "D" || choice == "e" || choice == "E" ||
-        choice == "f" || choice == "F")
+        choice == "f" || choice == "F" || choice == "h" || choice == "H" || choice == "help"
+        || choice == "Help" || choice == "HELP")
     {
         return true;
     }
@@ -255,6 +262,12 @@ void StringTokenizer::on()
             else
                 std::cout << "Not Found" << std::endl;
             continueAnalysis();
+        }
+        break;
+        case 7:
+        {
+            help();
+            on();
         }
         break;
         default:

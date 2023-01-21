@@ -36,6 +36,11 @@ void MetricConvertor::setMap() {
     myMap["E"] = 5;
     myMap["f"] = 6;
     myMap["F"] = 6;
+    myMap["h"] = 7;
+    myMap["H"] = 7;
+    myMap["help"] = 7;
+    myMap["Help"] = 7;
+    myMap["HELP"] = 7;
 }
 void MetricConvertor::valueInput()
 {
@@ -73,6 +78,7 @@ void MetricConvertor::printMenu()
     std::cout << "d) meters to feet and feet to meters" << std::endl;
     std::cout << "e) inches to cm and cm to inches" << std::endl;
     std::cout << "f) mph to kph and kph to mph" << std::endl;
+    std::cout << "h) HELP" << std::endl;
     std::cout << "----------------------------------------------------------" << std::endl;
 }
 double MetricConvertor::kmToMiles()
@@ -127,7 +133,8 @@ bool MetricConvertor::isValidChoice(std::string choice)
 {
     if (choice == "a" || choice == "A" || choice == "b" || choice == "B" || choice == "c" ||
         choice == "C" || choice == "d" || choice == "D" || choice == "e" || choice == "E" ||
-        choice == "f" || choice == "F")
+        choice == "f" || choice == "F" || choice == "h" || choice == "H" || choice == "help"
+        || choice == "Help" || choice == "HELP")
     {
         return true;
     }
@@ -307,6 +314,12 @@ void MetricConvertor::on()
             }
             }
 
+        }
+        break;
+        case 7:
+        {
+            help();
+            on();
         }
         break;
         default:
