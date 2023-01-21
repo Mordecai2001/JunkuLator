@@ -1,11 +1,10 @@
 #include <iostream>
-#include "MathCalculator.h"
-#include "StringTokenizer.h"
+#include "JunkuLator.h"
 
 using namespace std;
 
 int main()
 {
-    StringTokenizer tok{};
-    tok.on();
+	JunkuLator jk{};
+	jk.on();
 }

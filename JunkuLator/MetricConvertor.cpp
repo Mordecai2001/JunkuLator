@@ -38,7 +38,7 @@ void MetricConvertor::valueInput()
     try
     {
         std::cout << "Enter the value: ";
-        std::cin >> myValue;
+        std::cin >> value;
     }
     catch (std::ios_base::failure& e) {
         std::cerr << "Invalid input. Please enter a floating point number." << std::endl;

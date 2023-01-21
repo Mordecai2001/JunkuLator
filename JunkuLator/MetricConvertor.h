@@ -6,7 +6,7 @@
 class MetricConvertor : public Machine
 {
 private:
-    double myValue{};
+    double value{};
     std::string choice{};
     std::map<std::string, int> myMap{};//holds the choices as int
 
