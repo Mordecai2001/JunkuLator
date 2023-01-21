@@ -2,8 +2,12 @@
 #include "MetricConvertor.h"
 #include "constants.h"
 
+MetricConvertor::MetricConvertor() {
+    setMap();
+}
 MetricConvertor::MetricConvertor(double theValue)
 {
+    setMap();
     if (theValue >= 0) {
         value = theValue;
     }
@@ -58,9 +62,7 @@ void MetricConvertor::getInput() {
         std::cout << "ERROR! Your choice is invalid!" << std::endl;
         std::cout << "------------------------------" << std::endl;
         getInput();
-
     }
-
 }
 void MetricConvertor::printMenu()
 {
@@ -87,7 +89,7 @@ double MetricConvertor::celsiusToFahrenheit()
 }
 double MetricConvertor::fahrenheitToCelsius()
 {
-    return (value / 1.8 - 32);
+    return ((value - 32) / 1.8);
 }
 double MetricConvertor::kgToPounds()
 {
@@ -141,22 +143,22 @@ void MetricConvertor::on()
     {
         case 1:
         {
-            valueInput();
             std::cout << "----------------------------------------------------------" << std::endl;
             std::cout << "a) convert km to miles " << std::endl;
             std::cout << "b) convert miles to km " << std::endl;
             std::cout << "----------------------------------------------------------" << std::endl;
             getInput();
+            valueInput();
             switch (myMap[choice])
             {
                 case 1:
                 {
-                    std::cout << value << " in miles is: " << kmToMiles() << std::endl;
+                    std::cout << value << " km in miles is: " <<  milesToKM() << std::endl;
                 }
                 break;
                 case 2:
                 {
-                    std::cout << value << " in kilometers is: " << milesToKM() << std::endl;
+                    std::cout << value << " miles in kilometers is: " << kmToMiles() << std::endl;
                 }
                 break;
                 default:
@@ -169,22 +171,22 @@ void MetricConvertor::on()
         break;
         case 2:
         {
-            valueInput();
             std::cout << "----------------------------------------------------------" << std::endl;
             std::cout << "a) convert Celsius to Fahrenheit " << std::endl;
             std::cout << "b) convert Fahrenheit to Celsius " << std::endl;
             std::cout << "----------------------------------------------------------" << std::endl;
             getInput();
+            valueInput();
             switch (myMap[choice])
             {
                 case 1:
                 {
-                    std::cout << value << " in Fahrenheit is: " << celsiusToFahrenheit() << std::endl;
+                    std::cout << value << " Celsius in Fahrenheit is: " << celsiusToFahrenheit() << std::endl;
                 }
                 break;
                 case 2:
                 {
-                    std::cout << value << " in Celsius is: " << fahrenheitToCelsius() << std::endl;
+                    std::cout << value << " Fahrenheit in Celsius is: " << fahrenheitToCelsius() << std::endl;
                 }
                 break;
                 default:
@@ -197,22 +199,22 @@ void MetricConvertor::on()
         break;
         case 3:
         {
-            valueInput();
             std::cout << "----------------------------------------------------------" << std::endl;
             std::cout << "a) convert kg to pounds " << std::endl;
             std::cout << "b) convert pounds to kg " << std::endl;
             std::cout << "----------------------------------------------------------" << std::endl;
             getInput();
+            valueInput();
             switch (myMap[choice])
             {
                 case 1:
                 {
-                    std::cout << value << " in pounds is: " << kgToPounds() << std::endl;
+                    std::cout << value << " kg in pounds is: " << poundsToKG() << std::endl;
                 }
                 break;
                 case 2:
                 {
-                    std::cout << value << " in kilograms is: " << poundsToKG() << std::endl;
+                    std::cout << value << " pounds in kilograms is: " <<  kgToPounds() << std::endl;
                 }
                 break;
                 default:
@@ -225,22 +227,22 @@ void MetricConvertor::on()
         break;
         case 4:
         {
-            valueInput();
             std::cout << "----------------------------------------------------------" << std::endl;
             std::cout << "a) convert meters to feet " << std::endl;
             std::cout << "b) convert feet to meters " << std::endl;
             std::cout << "----------------------------------------------------------" << std::endl;
             getInput();
+            valueInput();
             switch (myMap[choice])
             {
                 case 1:
                 {
-                    std::cout << value << " in feet is: " << metersToFeet() << std::endl;
+                    std::cout << value << " meters in feet is: " <<  feetToMeters() << std::endl;
                 }
                 break;
                 case 2:
                 {
-                    std::cout << value << " in meters is: " << feetToMeters() << std::endl;
+                    std::cout << value << " feet in meters is: " << metersToFeet() << std::endl;
                 }
                 break;
                 default:
@@ -253,22 +255,22 @@ void MetricConvertor::on()
         break;
         case 5:
         {
-            valueInput();
             std::cout << "----------------------------------------------------------" << std::endl;
             std::cout << "a) convert inches to cm " << std::endl;
             std::cout << "b) convert cm to inches " << std::endl;
             std::cout << "----------------------------------------------------------" << std::endl;
             getInput();
+            valueInput();
             switch (myMap[choice])
             {
                 case 1:
                 {
-                    std::cout << value << " in cm is: " << inchesToCM() << std::endl;
+                    std::cout << value << " inches in cm is: " <<  cmToInches() << std::endl;
                 }
                 break;
                 case 2:
                 {
-                    std::cout << value << " in inches is: " << cmToInches() << std::endl;
+                    std::cout << value << " cm in inches is: " << inchesToCM() << std::endl;
                 }
                 break;
                 default:
@@ -281,22 +283,22 @@ void MetricConvertor::on()
         break;
         case 6:
         {
-            valueInput();
             std::cout << "----------------------------------------------------------" << std::endl;
             std::cout << "a) convert mph to kph " << std::endl;
             std::cout << "b) convert kph to mph " << std::endl;
             std::cout << "----------------------------------------------------------" << std::endl;
             getInput();
+            valueInput();
             switch (myMap[choice])
             {
             case 1:
             {
-                std::cout << value << " in kph is: " << mphToKPH() << std::endl;
+                std::cout << value << " mph in kph is: " << mphToKPH() << std::endl;
             }
             break;
             case 2:
             {
-                std::cout << value << " in mph is: " << kphToMPH() << std::endl;
+                std::cout << value << " kph in mph is: " << kphToMPH() << std::endl;
             }
             break;
             default:

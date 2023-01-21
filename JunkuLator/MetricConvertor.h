@@ -12,7 +12,7 @@ private:
 
 public:
     // constructors and the destructor
-    MetricConvertor() = default;
+    MetricConvertor();
     MetricConvertor(double theValue);
     ~MetricConvertor();
 

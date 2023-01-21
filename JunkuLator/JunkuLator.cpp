@@ -63,6 +63,7 @@ void JunkuLator::getInput() {
 	
 	std::cout << "Enter your choice: ";
 	std::cin >> choice;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	while (!isValidChoice(choice))
 	{
 			std::cout << "ERROR! Your choice is invalid!" << std::endl;
