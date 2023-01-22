@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include "GradeCalculator.h"
 
@@ -168,7 +169,11 @@ bool GradeCalculator::isValidChoice(int choice) {
 	else return false;
 }
 void GradeCalculator::calculateGrade() {
-	int total = 20 + 1 / 4 * finalGrade + 1 / 5 * midtermGrade + 1 / 20 * quizesGrade + 15 / 100 * projectGrade + 1 / 10 * labsGrade;
+	double total = 20.0 + labsGrade / static_cast<double>(10) 
+		+ quizesGrade/ static_cast<double>(20) 
+		+ projectGrade/ static_cast<double>(6.66) 
+		+ midtermGrade / static_cast<double>(5)
+		+ finalGrade / static_cast<double>(4);
 	if (total >= 90) {
 		grade = 'A';
 	}
@@ -209,11 +214,30 @@ void GradeCalculator::on() {
 			std::cin >> fileName;
 		}
 		std::ifstream file(fileName);
-		while (file >> studentName >> labsGrade >> quizesGrade >> projectGrade >> midtermGrade >> finalGrade) {
-			calculateGrade();
-			std::cout << studentName << "'s grade is: " << grade << std::endl;
+		if (file.is_open()) {
+			std::string line{};
+			while (getline(file, line)) {
+				std::stringstream ss(line);
+				std::string temp{};
+				getline(ss, studentName, ',');
+				getline(ss, temp, ',');
+				labsGrade = stoi(temp);
+				getline(ss, temp, ',');
+				quizesGrade = stoi(temp);
+				getline(ss, temp, ',');
+				projectGrade = stoi(temp);
+				getline(ss, temp, ',');
+				midtermGrade = stoi(temp);
+				getline(ss, temp, ',');
+				finalGrade = stoi(temp);
+				calculateGrade();
+				std::cout << studentName << "'s grade is: " << grade << std::endl;
+			}
+			file.close();
 		}
-		file.close();
+		else {
+			std::cout << "Failed to open the file!" << std::endl;
+		}
 	}
 	else {
 		help();
