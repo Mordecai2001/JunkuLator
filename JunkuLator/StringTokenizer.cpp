@@ -200,11 +200,13 @@ void StringTokenizer::continueAnalysis()
     std::string continueChoice;
     std::cin >> continueChoice;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (continueChoice == "y")
+    if (continueChoice == "y" || continueChoice == "yes" || continueChoice == "Y"
+        || continueChoice == "YES")
     {
         on();
     }
-    else if (continueChoice != "n")
+    else if (continueChoice != "n" && continueChoice != "no" && continueChoice != "N"
+        && continueChoice != "NO")
     {
         std::cout << "ERROR! Your choice is invalid!" << std::endl;
     }
