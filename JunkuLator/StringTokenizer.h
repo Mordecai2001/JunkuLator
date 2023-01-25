@@ -1,3 +1,13 @@
+/*
+Program name: StringTokenizer
+Author: Rares-Mihail Neagu
+Date(s): current form 01/25/23
+Version Control: Git
+Program Description: The StringTokenizer is a multi-purpose
+string analyzer that allows you to parse a string and check
+the number of words, letters, print the line backwards and so
+on.
+*/
 #pragma once
 #include <string>
 #include <vector>

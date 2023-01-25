@@ -1,3 +1,12 @@
+/*
+Program name: MathCalculator
+Author: Rares-Mihail Neagu
+Date(s): current form 01/25/23
+Version Control: Git
+Program Description: The MathCalculator provides the functionality
+of performing arithmetic and logical operations from this set:
++,-,*,/,%,log2(n).
+*/
 #pragma once
 #include <string>
 #include <map>

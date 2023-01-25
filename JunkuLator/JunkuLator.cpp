@@ -120,7 +120,7 @@ void JunkuLator::on() {
 }
 void JunkuLator::help() {
 	std::cout << "-------------------------HELP---------------------------" << std::endl;
-	std::cout << "The JunkuLator is general-purpose calculator that solves" << std::endl;
+	std::cout << "The JunkuLator is a general-purpose calculator that solves" << std::endl;
 	std::cout << "different types of problems. You can perform arithmetic operations" << std::endl;
 	std::cout << "using the Math Calculator or convert units with the Metric Converter." << std::endl;
 	std::cout << "On top of that you can calculate your grade using the Grades Calculator" << std::endl;

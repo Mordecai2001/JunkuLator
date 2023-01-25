@@ -1,3 +1,14 @@
+/*
+Program name: JunkuLator
+Author: Rares-Mihail Neagu
+Date(s): current form 01/25/23
+Version Control: Git
+Program Description: The JunkuLator is a general-purpose
+calculator that has a MathCalculator for arithmetic operations,
+the StringTokenizer for analyzing strings, the MetricConvertor
+for converting values between unit systems, and the GradeCalulator
+for calculating the grade of students
+*/
 #pragma once
 #include <iostream>
 #include <string>

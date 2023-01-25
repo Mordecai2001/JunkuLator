@@ -1,3 +1,12 @@
+/*
+Program name: GradeCalculator
+Author: Rares-Mihail Neagu
+Date(s): current form 01/25/23
+Version Control: Git
+Program Description: The GradeCalculator class allows you 
+to calculate the grades of a student either by prompting the
+user to input the values or by reading from a file
+*/
 #pragma once
 #include <string>
 #include "Machine.h"

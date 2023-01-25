@@ -1,3 +1,11 @@
+/*
+Program name: MetricConvertor
+Author: Rares-Mihail Neagu
+Date(s): current form 01/25/23
+Version Control: Git
+Program Description: The MetricConvertor provides the functionality
+of converting between the Imperial and the SI metric systems
+*/
 #pragma once
 #include <map>
 #include <string>
