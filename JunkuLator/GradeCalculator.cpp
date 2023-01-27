@@ -1,3 +1,9 @@
+/*
+Program name: GradeCalculator Implementation
+Author: Rares-Mihail Neagu
+Date(s): current form 01/27/23
+Version Control: Git
+*/
 #include <iostream>
 #include <fstream>
 #include <sstream>
