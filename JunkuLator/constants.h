@@ -12,4 +12,3 @@ double poundInKG{0.453592};
 double footInMeters{0.3048};
 double inchInCM{2.54};
 double mphInKPH{1.609344};
-

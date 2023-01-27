@@ -56,6 +56,4 @@ public:
 	//inherited from Machine
 	void on();
 	void help();
-	
-
 };

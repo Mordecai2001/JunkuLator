@@ -53,4 +53,3 @@ public:
     void on();
     void help();
 };
-

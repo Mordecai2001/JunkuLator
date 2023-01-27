@@ -257,4 +257,3 @@ void GradeCalculator::help() {
 	std::cout << "from a file. " << std::endl;
 	std::cout << "--------------------------------------------------------" << std::endl;
 }
-
